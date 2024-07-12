@@ -67,7 +67,7 @@ export const PatientForm = () => {
           <p className='text-dark-700'>Get started with appointments.</p>
         </section>
 
-        {/*  */}
+        {/* name field */}
         <CustomFormField
           control={form.control}
           fieldType={FormFieldType.INPUT}
@@ -78,7 +78,7 @@ export const PatientForm = () => {
           iconAlt='User icon'
         />
 
-        {/*  */}
+        {/*email field */}
         <CustomFormField
           control={form.control}
           fieldType={FormFieldType.INPUT}
@@ -89,7 +89,7 @@ export const PatientForm = () => {
           iconAlt='Email icon'
         />
 
-        {/*  */}
+        {/* phone number field */}
         <CustomFormField
           control={form.control}
           fieldType={FormFieldType.PHONE_INPUT}

@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Main content */}
       <section className='container my-auto remove-scrollbar'>
-        <div className='sub-container max-w-[460px]'>
+        <div className='sub-container max-w-[360px]'>
           {/* Header */}
           <div className='flex mb-12 h-10'>
             {/* Logo */}
