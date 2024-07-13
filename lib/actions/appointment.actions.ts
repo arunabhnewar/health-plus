@@ -8,6 +8,7 @@ import {
 } from "../appwrite.config";
 import { parseStringify } from "../utils";
 
+// Create New Appointment
 export const createAppointment = async (
   appointment: CreateAppointmentParams
 ) => {
@@ -22,5 +23,22 @@ export const createAppointment = async (
     return parseStringify(newAppointment);
   } catch (error) {
     console.log(error);
+  }
+};
+
+// Get Appointment
+export const getAppointment = async (appointmentId: string) => {
+  try {
+    const appointment = await database.getDocument(
+      DATABASE_ID!,
+      APPOINTMENT_COLLECTION_ID!,
+      appointmentId
+    );
+    return parseStringify(appointment);
+  } catch (error) {
+    console.log(
+      "An error occurred while retrieving the existing patient:",
+      error
+    );
   }
 };
