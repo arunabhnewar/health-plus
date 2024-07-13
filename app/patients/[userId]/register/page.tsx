@@ -6,8 +6,8 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
   const user = await getUser(userId);
 
   return (
-    <div className='flex '>
-      <section className='remove-scrollbar container my-auto'>
+    <div className='flex h-screen max-h-screen'>
+      <section className='remove-scrollbar container'>
         <div className='sub-container max-w-[860px] flex-1 flex-col py-10'>
           <div className='flex mb-12 h-10'>
             {/* Logo */}
@@ -34,13 +34,15 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
       </section>
 
       {/* Side image */}
-      <Image
-        src='/assets/images/register-img.png'
-        alt='Register'
-        width={1000}
-        height={1000}
-        className='side-img max-w-[390px]'
-      />
+      <div>
+        <Image
+          src='/assets/images/register-img.png'
+          alt='Register'
+          width={1000}
+          height={1000}
+          className='side-img max-w-[390px]'
+        />
+      </div>
     </div>
   );
 };
