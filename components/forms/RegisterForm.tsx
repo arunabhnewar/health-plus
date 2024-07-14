@@ -58,17 +58,41 @@ export const RegisterForm = ({ user }: { user: User }) => {
     }
 
     try {
-      const patientData = {
+      const patient = {
         ...values,
+        // userId: user.$id,
+        // birthDate: new Date(values.birthDate),
+        // identificationDocument: values.identificationDocument
+        //   ? formData
+        //   : undefined,
+
         userId: user.$id,
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
         birthDate: new Date(values.birthDate),
+        gender: values.gender,
+        address: values.address,
+        occupation: values.occupation,
+        emergancyContactName: values.emergancyContactName,
+        emergancyContactNumber: values.emergancyContactNumber,
+        primaryPhysician: values.primaryPhysician,
+        insuranceProvider: values.insuranceProvider,
+        insurancePolicyNumber: values.insurancePolicyNumber,
+        allergies: values.allergies,
+        currentMedication: values.currentMedication,
+        familyMedicalHistory: values.familyMedicalHistory,
+        pastMedicalHistory: values.pastMedicalHistory,
+        identificationType: values.identificationType,
+        identificationNumber: values.identificationNumber,
         identificationDocument: values.identificationDocument
           ? formData
           : undefined,
+        privacyConsent: values.privacyConsent,
       };
 
       // @ts ignore this line
-      const newPatient = await registerPatient(patientData);
+      const newPatient = await registerPatient(patient);
 
       if (newPatient) {
         router.push(`/patients/${user.$id}/new-appointment`);
