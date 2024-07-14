@@ -7,8 +7,9 @@ import {
   APPOINTMENT_COLLECTION_ID,
   database,
   DATABASE_ID,
+  messaging,
 } from "../appwrite.config";
-import { parseStringify } from "../utils";
+import { formatDateTime, parseStringify } from "../utils";
 
 // Create New Appointment
 export const createAppointment = async (
@@ -90,6 +91,22 @@ export const getAppointmentsList = async () => {
   }
 };
 
+// Send SMS Notification
+export const sendSMSNotification = async (userId: string, content: string) => {
+  try {
+    const message = await messaging.createSms(
+      ID.unique(),
+      content,
+      [userId],
+      []
+    );
+
+    return parseStringify(message);
+  } catch (error) {
+    console.error("An error occurred while sending sms:", error);
+  }
+};
+
 // Get Update Appointment
 export const updateAppointment = async ({
   userId,
@@ -105,10 +122,27 @@ export const updateAppointment = async ({
       appointment
     );
 
-    if (!updatedAppointment) throw new Error("Could not update appointment");
+    if (!updatedAppointment) {
+      throw new Error("Could not update appointment");
+    }
 
     // SMS Notification
+    const smsMessage = `
+    Hi, Greetings from HealthPlus.
+    ${
+      type === "schedule"
+        ? `Your appointment is confirmed for ${
+            formatDateTime(appointment.schedule!).dateTime
+          } with Dr. ${appointment.primaryPhysician} .`
+        : `We regret to inform that your appointment for ${
+            formatDateTime(appointment.schedule!).dateTime
+          } is cancelled. Reason for cancellation: ${
+            appointment.cancellationReason
+          }.`
+    }`;
 
+    await sendSMSNotification(userId, smsMessage);
+    console.log(userId, smsMessage);
     revalidatePath("/admin");
     return parseStringify(updatedAppointment);
   } catch (error) {

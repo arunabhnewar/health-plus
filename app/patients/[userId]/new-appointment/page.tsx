@@ -1,6 +1,7 @@
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
 import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
+import Link from "next/link";
 
 const NewAppointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
@@ -9,7 +10,7 @@ const NewAppointment = async ({ params: { userId } }: SearchParamProps) => {
     <div className='flex h-screen max-h-screen'>
       <section className='remove-scrollbar container '>
         <div className='sub-container max-w-[860px] flex-1 justify-between'>
-          <div className='flex mb-12 h-10'>
+          <Link className='flex mb-12 h-10' href='/'>
             {/* Logo */}
             <Image
               src='/assets/icons/logo-icon.svg'
@@ -20,7 +21,7 @@ const NewAppointment = async ({ params: { userId } }: SearchParamProps) => {
             />
             {/* App name */}
             <p className='mt-1.5 ms-1 text-2xl font-bold'>HealthPlus</p>
-          </div>
+          </Link>
 
           {/* Appointment form */}
           <AppointmentForm

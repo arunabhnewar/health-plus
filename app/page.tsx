@@ -11,8 +11,8 @@ export default function Home({ searchParams }: SearchParamProps) {
       {isAdmin && <PassKeyModal />}
       {/* <PassKeyModal /> */}
 
-      <section className='container my-auto remove-scrollbar'>
-        <div className='sub-container max-w-[360px]'>
+      <section className='container  remove-scrollbar'>
+        <div className='sub-container max-w-[460px]'>
           <div className='flex mb-12 h-10'>
             <Image
               src='/assets/icons/logo-icon.svg'
@@ -40,8 +40,8 @@ export default function Home({ searchParams }: SearchParamProps) {
       <Image
         src='/assets/images/onboarding-img.png'
         alt='Patient'
-        width={1000}
-        height={1000}
+        width={500}
+        height={500}
         className='side-img'
       />
     </div>
