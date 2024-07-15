@@ -13,7 +13,7 @@ const NewAppointment = async ({ params: { userId } }: SearchParamProps) => {
           <Link className='flex mb-12 h-10' href='/'>
             {/* Logo */}
             <Image
-              src='/assets/icons/logo-icon.svg'
+              src='/assets/icons/logo.jpg'
               alt='HealthPlus logo'
               width={40}
               height={40}

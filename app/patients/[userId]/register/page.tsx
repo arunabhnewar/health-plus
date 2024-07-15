@@ -12,7 +12,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
           <div className='flex mb-12 h-10'>
             {/* Logo */}
             <Image
-              src='/assets/icons/logo-icon.svg'
+              src='/assets/icons/logo.jpg'
               alt='HealthPlus logo'
               width={40}
               height={40}

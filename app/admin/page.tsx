@@ -12,7 +12,7 @@ const AdminPage = async () => {
       <header className='admin-header'>
         <Link className='flex cursor-pointer' href='/'>
           <Image
-            src='/assets/icons/logo-icon.svg'
+            src='/assets/icons/logo.jpg'
             alt='HealthPlus logo'
             width={40}
             height={40}

@@ -21,7 +21,7 @@ const RequestSuccess = async ({
       <div className='success-img'>
         <Link href='/' className='flex'>
           <Image
-            src='/assets/icons/logo-icon.svg'
+            src='/assets/icons/logo.jpg'
             alt='HealthPlus logo'
             width={40}
             height={40}

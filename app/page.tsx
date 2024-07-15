@@ -12,10 +12,10 @@ export default function Home({ searchParams }: SearchParamProps) {
       {/* <PassKeyModal /> */}
 
       <section className='container  remove-scrollbar'>
-        <div className='sub-container max-w-[460px]'>
-          <div className='flex mb-12 h-10'>
+        <div className='sub-container max-w-[460px] mb-5'>
+          <div className='flex mb-8 h-10'>
             <Image
-              src='/assets/icons/logo-icon.svg'
+              src='/assets/icons/logo.jpg'
               alt='HealthPlus logo'
               width={40}
               height={40}

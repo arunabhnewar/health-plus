@@ -46,7 +46,9 @@ export default function RootLayout({
           // Enable anti-aliasing for text.
           "antialiased",
           // Apply the variable font-sans to the body element.
-          fontSans.variable
+          fontSans.variable,
+
+          "scroll-smooth"
         )}>
         {/* Wrap the children components with the ThemeProvider component.
             The ThemeProvider component sets up the theme for the application. */}
